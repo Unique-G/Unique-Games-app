@@ -1,0 +1,57 @@
+{
+  "name": "SFGames",
+  "productName": "SF Games Manager",
+  "version": "1.3.0",
+  "description": "Super Frame Games Manager",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "test": "mocha && standard",
+    "build": "npm-run-all build:*",
+    "build:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns --osx-sign.identity='Developer ID Application: SuperFrame' --extend-info=assets/mac/info.plist",
+    "build:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/app-icon/win/app.ico",
+    "build:linux": "electron-packager . --overwrite --platform=linux --arch=x64 --out=out",
+    "build:sign-exe": "signcode './out/SFG-win32-ia32/SuperFrame.exe' --cert ~/SuperFrame.p12 --prompt --name 'SF Games Manager' --url 'http://superframe.sinfonia.co'",
+    "build:installer": "node ./script/installer.js",
+    "build:sign-installer": "signcode './out/windows-installer/SuperFrame installer.exe' --cert ~/SuperFrame.p12 --prompt --name 'SF Games Manager' --url 'http://superframe.sinfonia.co'",
+    "build:mas": "./script/mas.sh",
+    "windows-store": "node ./script/windows-store.js",
+    "release": "node ./script/release.js"
+  },
+  "repository": "https://github.com/Super-Frame/SF-Games",
+  "keywords": [
+    "SuperFrame",
+    "Games",
+    "Manager"
+  ],
+  "author": "SuperFrame",
+  "license": "SF",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^6.0.0",
+    "devtron": "^1.3.0",
+    "electron": "~1.6.2",
+    "electron-packager": "^8.6.0",
+    "electron-winstaller": "^2.2.0",
+    "mocha": "^3.1.0",
+    "npm-run-all": "^4.0.2",
+    "request": "^2.70.0",
+    "rimraf": "^2.5.2",
+    "signcode": "^0.5.0",
+    "spectron": "~3.6.0",
+    "standard": "^8.2.0"
+  },
+  "dependencies": {
+    "electron-json-storage": "^2.0.0",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "glob": "^7.1.0",
+    "highlight.js": "^9.3.0"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
+  }
+}

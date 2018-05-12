@@ -1,0 +1,64 @@
+<template class="task-template">
+  <section id="acount-section" class="section js-section u-category-acount">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <span class="icon-person"></span>
+          ACOUNT
+        </h1>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-crashes-demo-toggle" class="js-container-target demo-toggle-button">Account details
+        </button>
+        <div class="demo-box">
+          <div class="datos">
+            <h5>Username</h5>
+            <p>"username" </p><a href="#"><span class="icon-mode_edit"></span>Edit</a>
+          </div>
+          <div class="datos">
+            <h5>Email</h5>
+            <p>"email" </p><a href="#">mostrar/ocultar</a>
+          </div>
+          <div class="datos">
+            <h5>More account information</h5>
+            <div class="demo-controls">
+              <button class="demo-button" id="process-hang">official page of super frame</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-hangs-demo-toggle" class="js-container-target demo-toggle-button">My games
+        </button>
+        <div class="demo-box">
+          <table>
+            <tr>
+              <th>Game</th>
+              <th>Acquisition date</th>
+              <th>Activation key</th>
+            </tr>
+            <tr>
+              <td>"game"</td>
+              <td>"acquisition date"</td>
+              <td>"key"</td>
+            </tr>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+      require('./renderer-process/acount/acount')
+    </script>
+
+  </section>
+</template>

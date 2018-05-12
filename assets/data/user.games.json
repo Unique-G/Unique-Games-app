@@ -1,0 +1,21 @@
+{
+	"games":[
+		{
+			"name":"Heros",
+			"autor":"Super Frame",
+			"category":"accion, comedia, mundo libre",
+			"portada":"assets/img/portadaVacia.jpg",
+			"ubicacionArchivo":"games/heros",
+			"activeKey":"13FR-34RW-T464-PO40",
+			"launchPage":[
+				{
+					"title":"Heros?",
+					"description":"un juego con un inicio tragico pero un final a tu eleccion, dede desastres naturales asta un heroe o la misma mafia, tu decides",
+					"pg": "18+",
+					"start":"games/heros/heroes.exe",
+					"moreInformation":"moreInformation"
+				}
+			]
+		}
+	]
+}

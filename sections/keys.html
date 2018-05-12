@@ -1,0 +1,19 @@
+<template class="task-template">
+  <div id="keys-modal" class="modales modal">
+    <div class="nav-controls-in-modals">
+      <h5 id="title" class="nav2-button nav2 nav2-title">Unique Games</h5>
+      <button id="title" class="nav2-button nav2 exit" onclick="window.close()"><span class="icon-x"></span></button>
+      <button id="title" class="nav2-button nav2 max" onclick="TogleMax()"><span id="max-icon" class="icon-square"></span></button>
+      <button id="title" class="nav2-button nav2 min" onclick="minimizar()" ><span class="icon-minus2"></span></button>
+    </div>
+    <button class="modal-hide" id="keys" onclick="hideModal()"><span class="icon-x"></span></button>
+    <div class="modal-header">
+      <h1>Key</h1>
+      <p>enter your key in the following text field</p>
+    </div>
+    <form class="row modal-wrapper">
+      <input class="input-text col-xs-12 col-sm-9" type="text" name="key" placeholder="key">
+      <input class="input-submit col-xs-12 col-sm-2" type="submit" name="submit" value="Redeem">
+    </form>
+  </div>
+</template>

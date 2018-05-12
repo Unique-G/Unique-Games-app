@@ -1,0 +1,71 @@
+<template class="task-template">
+  <section id="games-section" class="section js-section u-category-news">
+
+
+    <div class="filters-games row">
+          <div class="filter">
+            <input type="text" name="" id="my-search-game" placeholder="SEARCH GAME">
+
+            <br>
+            
+            <script type="text/javascript">
+              var sGame = document.getElementById("my-search-game"),
+                  iGame = document.getElementsByTagName("game-2"),
+                  forEach = Array.prototype.forEach;
+
+              sGame.addEventListener("keyup", function(e){
+                var Choice = this.value;
+                  
+                forEach.call(iGame, function(f){
+                  var parent = f.parentNode;
+                  if (f.innerHTML.toLowerCase().search(Choice.toLowerCase()) == -1)
+                    parent.parentNode.style.display = "none";        
+                  else
+                    parent.parentNode.style.display = "block";        
+                });
+              }, false);
+            </script>
+          </div>
+        </div>
+    <div class="section-wrapper">
+      <!--<h3 id="favorite-title">FAVORITES <span class="icon-star-empty"></span></h3>-->
+      <div id="games" class="games row">
+        <script type="text/javascript">
+          let fs = require('fs');
+          
+
+
+
+
+          var contents = fs.readFileSync("assets/data/user.games.json");
+          var jsonContent = JSON.parse(contents);
+          var games = "";
+          var gamePage = "";
+          for(var i=0;i<jsonContent.games.length;i++){
+
+            games += '<div class="item-container col-xs-12 col-sm-3 col-md-3"><div class="item"><div class="item-header"><img src="'+jsonContent.games[i].portada+'"></div><game-2>'+jsonContent.games[i].name+'</game-2><autor-2>'+jsonContent.games[i].autor+'</autor-2><category-2>'+jsonContent.games[i].category+'</category-2><favorite><span class="icon-star-empty"></favorite><button type="button" onclick="closeMenu()" id="button-keys" class="item-button" data-modal="'+jsonContent.games[i].name+'" >Open</button></div></div>';
+
+
+            for (var e=0;e<jsonContent.games[i].launchPage.length;e++) {
+              gamePage += '<div class="modales modal .u-category-games" id="'+jsonContent.games[i].name+'-modal"><div class="nav-controls-in-modals"><h5 class="nav2-button nav2 nav2-title" id="title">Unique Games</h5><button class="nav2-button nav2 exit" id="title" onclick="window.close()"><span class="icon-x"></span></button><button class="nav2-button nav2 max" id="title" onclick="TogleMax()"><span class="icon-square" id="max-icon"></span></button><button class="nav2-button nav2 min" id="title" onclick="minimizar()"><span class="icon-minus2"></span></button></div><button class="modal-hide" onclick="hideModal(id)" id="'+jsonContent.games[i].name+'"><span class="icon-x"></span></button><div class="section-wrapper mm"><div class="noticias-modal row"><div class="filters col-xs-12 col-sm-3 col-md-3 row"><div class="filter"><h1>'+jsonContent.games[i].launchPage[e].title+'</h1><h5>'+jsonContent.games[i].launchPage[e].pg+'</h5><hr><br><button class="modal-button" onclick="RunFile">Start Game</button> <button class="route-button">open the game route</button></div></div><div class="items col-xs-12 col-sm-9 col-md-9 row"><div class="col-xs-12 filters"><div class="filter"><h3>Description</h3>'+jsonContent.games[i].launchPage[e].description+'</div></div><div class="col-xs-12 filters"><div class="filter"><h3>More information</h3>'+jsonContent.games[i].launchPage[e].moreInformation+'</div></div></div></div></div></div>'
+
+                function RunFile() {
+                  WshShell = new ActiveXObject("WScript.Shell");
+                  WshShell.Run(jsonContent.games[i].launchPage.start, 1, false);
+                }
+            } 
+          }
+
+
+
+
+
+
+          document.getElementById('pages').innerHTML = gamePage;
+          document.getElementById("games").innerHTML = games;
+          </script>
+      </div>
+      
+    </div>
+  </section>
+</template>

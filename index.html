@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/nativize.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/section.css">
+  <link rel="stylesheet" href="assets/css/demo.css">
+  <link rel="stylesheet" href="assets/css/github.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/modales.css">
+  <link rel="stylesheet" href="assets/css/flexboxgrid.min.css">
+
+  <link rel="import" href="http://megadesk.sinfonia.co/app/Unique Games/sections/keys.php">
+  <link rel="import" href="http://megadesk.sinfonia.co/app/Unique Games/sections/news.php">
+  <link rel="import" href="http://megadesk.sinfonia.co/app/Unique Games/sections/shop.php">
+  <link rel="import" href="sections/games.html">
+  <link rel="import" href="sections/acount.html">
+
+</head>
+<body>
+  <nav class="nav js-nav">
+    <!--<header class="nav-header">
+      <h1 class="nav-title">Super <strong>Frame</strong></h1>
+    <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
+      <svg class="nav-header-icon"><use xlink:href="assets/img/icons.svg#icon-electron"></use></svg>
+    </header>-->
+    <div class="nav-controls">
+      <h5 id="title-1" class="nav2-button nav2 nav2-title">Unique Games</h5>
+      <button id="title-2" class="nav2-button nav2 exit" onclick="window.close()"><span class="icon-x"></span></button>
+      <button id="title-3" class="nav2-button nav2 max" onclick="TogleMax()"><span id="max-icon" class="icon-square"></span></button>
+      <button id="title-4" class="nav2-button nav2 min" onclick="minimizar()" ><span class="icon-minus2"></span></button>
+    </div>
+    <div class="nav-menu">
+      <button type="button" class="nav-button-menu" onclick="openMenu()"><span class="icon-menu5"></span></button>
+      <button type="button" id="button-crash-hang" data-section="news" class="nav-button"><span class="icon-newspaper"></span> news</button>
+      <button type="button" id="button-shop" data-section="shop" class="nav-button"><span class="icon-store_mall_directory"></span> shop </button>
+      <button type="button" id="button-games" data-section="games" class="nav-button"><span class="icon-games"></span> games</button>
+      <button type="button" id="button-acount" data-section="acount" style="float: right;" class="nav-button">acount</button>
+    </div>
+  </nav>
+
+  <main class="content js-content"></main>
+  <div id="pages">
+    
+  </div>
+  <div id="menu" class="menu" onclick="closeMenu()">
+    <div class="menu-body" >
+      <button type="button" id="menu-close" class="menu-button-close" onclick="closeMenu()"><span class="icon-x"></span></button>
+      <button type="button" onclick="closeMenu()" id="button-keys" class="menu-button" data-modal="keys" ><span class="icon-vpn_key"></span> redeem a code</button>
+      <button type="button" onclick="closeMenu()" id="button-settings" class="menu-button" data-modal="settings" ><span class="icon-settings2"></span> settings</button>
+      <button type="button" onclick="closeMenu()" id="button-downloads" class="menu-button" data-modal="downloads" ><span class="icon-download4"></span> downloads</button>
+      <button type="button" onclick="closeMenu()" id="button-version-notes" class="menu-button" data-modal="version-notes" ><span class="icon-file-text2"></span> version notes</button>
+      <button type="button" onclick="closeMenu()" id="button-offline" class="menu-button" data-modal="offline" ><span class="icon-wifi-off"></span> offline mode</button>
+      <button type="button" onclick="closeMenu()" id="button-logout" class="menu-button" data-modal="logout" ><span class="icon-log-out"></span> log out</button>
+      <button type="button" onclick="closeMenu()" class="menu-button" onclick="window.close()"><span class="icon-power3" ></span> exit</button>
+    </div>
+  </div>
+  <script>window.$ = window.jQuery = require('jQuery');</script>
+  <script type="text/javascript">
+    //menu
+    var menu = document.getElementById('menu');
+    function openMenu() {
+      menu.classList.add('is-shown');
+    }
+    function closeMenu() {
+
+      menu.classList.remove('is-shown');
+    }
+  </script>
+  <script>
+    require('./assets/imports')
+    require('./assets/ex-links')
+    require('./assets/nav')
+    require('./assets/demo-btns')
+    require('./assets/code-blocks')
+    require('./assets/normalize-shortcuts')
+
+    const { remote } = require('electron')
+    function minimizar(){
+      remote.BrowserWindow.getFocusedWindow().minimize();
+    }
+    function TogleMax() {
+      if (remote.BrowserWindow.getFocusedWindow().isMaximized() == true) {
+        remote.BrowserWindow.getFocusedWindow().unmaximize();
+        document.getElementById('max-icon').classList.remove('icon-filter_none');
+        document.getElementById('max-icon').classList.add('icon-square');
+      }else {
+        remote.BrowserWindow.getFocusedWindow().maximize();
+        document.getElementById('max-icon').classList.remove('icon-square');
+        document.getElementById('max-icon').classList.add('icon-filter_none');
+      }
+    }
+    function hideModal(id){
+      document.getElementById(id + '-modal').classList.remove('is-shown');
+
+    }
+    const os = require("os");
+    var sistem = os.type();
+    if (sistem = 'Window_NT') {
+      document.getElementById('title-1').classList.remove('hide');
+      document.getElementById('title-2').classList.remove('hide');
+      document.getElementById('title-3').classList.remove('hide');
+      document.getElementById('title-4').classList.remove('hide');
+    } else {
+      document.getElementById('title-1').classList.add('hide');
+      document.getElementById('title-2').classList.add('hide');
+      document.getElementById('title-3').classList.add('hide');
+      document.getElementById('title-4').classList.add('hide');
+    }
+  </script>
+</body>
+</html>

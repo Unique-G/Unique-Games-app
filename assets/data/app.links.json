@@ -1,0 +1,73 @@
+{
+	"meta":"<meta charset='utf-8'>"
+	"links": [
+		{
+			"link":"assets/css/variables.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/nativize.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/global.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/about.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/nav.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/menu.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/section.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/demo.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/github.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/style.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/modales.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"assets/css/flexboxgrid.min.css",
+			"rel":"stylesheet"
+		},
+		{
+			"link":"http://megadesk.sinfonia.co/app/Unique Games/sections/keys.php",
+			"rel":"import"
+		},
+		{
+			"link":"http://megadesk.sinfonia.co/app/Unique Games/sections/news.php",
+			"rel":"import"
+		},
+		{
+			"link":"http://megadesk.sinfonia.co/app/Unique Games/sections/shop.php",
+			"rel":"import"
+		},
+		{
+			"link":"sections/games.html",
+			"rel":"import"
+		},
+		{
+			"link":"sections/acount.html",
+			"rel":"import"
+		}
+	]
+}

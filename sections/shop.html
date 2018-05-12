@@ -1,0 +1,187 @@
+<template class="task-template">
+  <section id="shop-section" class="section js-section u-category-news">
+    <header class="section-header">
+      <div id="slider">
+        <div class="slides">
+          <div class="slider">
+            <div class="image">
+              <img src="http://img11.hostingpics.net/pics/767361311.jpg">
+            </div>
+          </div>
+          <div class="slider">
+            <div class="image">
+              <img src="http://img11.hostingpics.net/pics/412998972.jpg">
+            </div>
+          </div>
+          <div class="slider">
+            <div class="image">
+              <img src="http://img11.hostingpics.net/pics/990696943.jpg">
+            </div>
+          </div>
+          <div class="slider">
+            <div class="image">
+              <img src="http://img11.hostingpics.net/pics/601549194.jpg">
+            </div>
+          </div>
+        </div>
+        <div class="switch">
+          <ul>
+            <li>
+              <div class="on"></div>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <br>
+    <div class="section-wrapper">
+      <div class="noticias row">
+        <div class="filters col-xs-12 col-sm-3 col-md-3 row">
+          <div class="filter">
+            <h3><span class="icon-search"></span>SEARCH</h3>
+            <label>SEARCH GAME</label>
+            <input type="text" name="" id="my-search-game" placeholder="Name of the game">
+            <label>SEARCH AUTOR</label>
+            <input type="text" name="" id="my-search-autor" placeholder="Name of the autor">
+            <label>SEARCH BY CATEGORY</label>
+            <input type="text" name="" id="my-search-category" placeholder="Category">
+
+            <br>
+            
+            <script type="text/javascript">
+              var mySearchGame = document.getElementById("my-search-game"),
+                  mySearchAutor = document.getElementById("my-search-autor"),
+                  mySearchCategory = document.getElementById("my-search-category"),
+                  myautor = document.getElementsByTagName("autor-2"),
+                  mygame = document.getElementsByTagName("game-2"),
+                  mycategory = document.getElementsByTagName("category-2"),
+                  forEach = Array.prototype.forEach;
+
+
+              mySearchGame.addEventListener("keyup", function(e){
+                var myChoice = this.value;
+                  
+                forEach.call(mygame, function(f){
+                  var myparent = f.parentNode;
+                  if (f.innerHTML.toLowerCase().search(myChoice.toLowerCase()) == -1)
+                    myparent.parentNode.style.display = "none";        
+                  else
+                    myparent.parentNode.style.display = "block";        
+                });
+              }, false);
+
+              mySearchAutor.addEventListener("keyup", function(e){
+                var myChoiceA = this.value;
+                  
+                forEach.call(myautor, function(f){
+                  var myparentA = f.parentNode;
+                  if (f.innerHTML.toLowerCase().search(myChoiceA.toLowerCase()) == -1)
+                    myparentA.parentNode.style.display = "none";        
+                  else
+                    myparentA.parentNode.style.display = "block";        
+                });
+              }, false);
+
+              mySearchCategory.addEventListener("keyup", function(e){
+                var myChoiceC = this.value;
+                  
+                forEach.call(mycategory, function(f){
+                  var myparentC = f.parentNode;
+                  if (f.innerHTML.toLowerCase().search(myChoiceC.toLowerCase()) == -1)
+                    myparentC.parentNode.style.display = "none";        
+                  else
+                    myparentC.parentNode.style.display = "block";        
+                });
+              }, false);
+            </script>
+          </div>
+        </div>
+        <div class="items col-xs-12 col-sm-9 col-md-9 row">
+          <div class="item-container col-xs-12 col-sm-6 col-md-4" data-filter="accion aventura">
+            <div class="item">
+              <div class="item-header">
+                <img src="http://img11.hostingpics.net/pics/601549194.jpg">
+              </div>
+              <game-2 class="item-body">
+                Heros?
+              </game-2>
+              <autor-2 class="item-body">
+                Super Frame
+              </autor-2>
+              <category-2 class="item-body">
+                accion, mundo abierto
+              </category-2>
+            </div>
+          </div>
+          <div class="item-container col-xs-12 col-sm-6 col-md-4"  data-filter="terror">
+            <div class="item">
+              <div class="item-header">
+                <img src="http://img11.hostingpics.net/pics/601549194.jpg">
+              </div>
+              <game-2 class="item-body">
+                2
+              </game-2>
+              <autor-2 class="item-body">
+                Frame
+              </autor-2>
+              <category-2 class="item-body">
+                rpg
+              </category-2>
+            </div>
+          </div>
+          <div class="item-container col-xs-12 col-sm-6 col-md-4" data-filter="accion mundo-libre">
+            <div class="item">
+              <div class="item-header">
+                <img src="http://img11.hostingpics.net/pics/601549194.jpg">
+              </div>
+              <game-2 class="item-body">
+                3
+              </game-2>
+              <autor-2 class="item-body">
+                Super
+              </autor-2>
+              <category-2 class="item-body">
+                sadico
+              </category-2>
+            </div>
+          </div>
+          <div class="item-container col-xs-12 col-sm-6 col-md-4" data-filter="accion sadico">
+            <div class="item">
+              <div class="item-header">
+                <img src="http://img11.hostingpics.net/pics/601549194.jpg">
+              </div>
+              <game class="item-body">
+                4
+              </game>
+              <autor class="item-body">
+                ubisoft
+              </autor>
+              <category class="item-body">
+                accion, comedia
+              </category>
+            </div>
+          </div>
+          <div class="item-container col-xs-12 col-sm-6 col-md-4" data-filter="ciencia ficcion">
+            <div class="item">
+              <div class="item-header">
+                <img src="http://img11.hostingpics.net/pics/601549194.jpg">
+              </div>
+              <game class="item-body">
+                1
+              </game>
+              <autor class="item-body">
+                simon lopez
+              </autor>
+              <category class="item-body">
+                terror
+              </category>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

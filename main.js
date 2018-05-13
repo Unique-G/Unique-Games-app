@@ -8,7 +8,7 @@ const app = electron.app
 
 const debug = /--debug/.test(process.argv[2])
 
-if (process.mas) app.setName('SFGames')
+if (process.mas) app.setName('Unique Games')
 
 var mainWindow = null
 
@@ -28,6 +28,7 @@ function initialize () {
       frame: false,
       titleBarStyle: 'customButtonsOnHover',
       }
+
 
     if (process.platform === 'linux') {
       windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
@@ -108,3 +109,4 @@ switch (process.argv[1]) {
   default:
     initialize()
 }
+

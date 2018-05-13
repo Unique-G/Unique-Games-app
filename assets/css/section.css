@@ -407,15 +407,14 @@ favorite:hover {
   color: #FFD5B3;
 }
 
-favorite.active {
+favorite.favorite {
   color: var(--color-favorite);
 }
 .item-button {
   border: 0;
   background-color: transparent;
   font-size: 15px;
-  float: right;
-  padding-right: 2rem;
+  padding-left: 2rem;
   color: white;
   display: inline-block;
 }
